@@ -272,9 +272,7 @@ async def brute_force_triplet_search(
         )
 
         query_list_length = len(query_batch) if query_batch is not None else None
-        wide_search_limit = (
-            None if query_list_length else (wide_search_top_k if node_name is None else None)
-        )
+        wide_search_limit = None if query_list_length else wide_search_top_k
 
         if collections is None:
             collections = [
